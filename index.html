@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phantom Guard | Device Security</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <span class="brand-icon">⬡</span>
+            <span>PHANTOM <b>GUARD</b></span>
+        </div>
+
+        <div class="nav-right">
+            <span class="status-dot"></span>
+            <span>SECURE DASHBOARD</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">DEVICE PROTECTION SYSTEM</p>
+                <h1>Welcome to <span>Phantom Guard</span></h1>
+                <p class="subtitle">
+                    Your device. Your control. Your security.
+                </p>
+            </div>
+            <div class="shield">🛡️</div>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <p>REGISTERED DEVICES</p>
+                <h2 id="deviceCount">01</h2>
+                <span>Devices in your account</span>
+            </div>
+
+            <div class="stat-card">
+                <p>SECURITY STATUS</p>
+                <h2 class="safe">PROTECTED</h2>
+                <span>Your dashboard is active</span>
+            </div>
+
+            <div class="stat-card">
+                <p>LOST MODE</p>
+                <h2 id="lostStatus">OFF</h2>
+                <span>Incident response status</span>
+            </div>
+
+        </section>
+
+        <section class="device-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR DEVICES</p>
+                    <h2>Device Management</h2>
+                    
+                    <section class="registration-section">
+    <p class="eyebrow">ADD A NEW DEVICE</p>
+    <h2>Device Registration</h2>
+
+    <form id="deviceForm" class="registration-form">
+
+        <input
+            type="text"
+            id="deviceName"
+            placeholder="Device Name (e.g. My Android)"
+            required
+        >
+
+        <input
+            type="text"
+            id="deviceModel"
+            placeholder="Device Model (e.g. Samsung Galaxy)"
+            required
+        >
+
+        <button type="submit">Register Device</button>
+
+    </form>
+
+    <div id="registrationResult"></div>
+</section>
+                </div>
+                <span class="device-badge">● 1 Device</span>
+            </div>
+
+            <div class="device-card">
+
+                <div class="phone-icon">📱</div>
+
+                <div class="device-info">
+                    <h3>My Android Phone</h3>
+                    <p>Android Device • Demo Record</p>
+                    <span class="device-id">ID: PG-2026-001</span>
+                </div>
+
+                <div class="device-status">
+                    <span class="online-dot"></span>
+                    <span>Registered</span>
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- LOST DEVICE INCIDENT MODULE -->
+
+<section class="incident-section">
+
+    <p class="eyebrow">EMERGENCY RESPONSE</p>
+    <h2>Lost Device Incident Report</h2>
+
+    <div class="incident-form">
+
+        <label for="lostDevice">Select Registered Device</label>
+
+        <select id="lostDevice">
+            <option value="">Select your device</option>
+        </select>
+
+        <label for="incidentDescription">Incident Description</label>
+
+        <textarea
+            id="incidentDescription"
+            placeholder="Describe when and where you noticed your device missing..."
+            rows="4"
+        ></textarea>
+
+        <button class="danger-btn" id="submitIncidentBtn">
+            Submit Lost Device Report
+        </button>
+
+    </div>
+
+    <div id="incidentResult"></div>
+
+</section>
+        <section class="action-section">
+<!-- PHANTOM GUARD LOCATION MODULE -->
+
+<section class="location-section">
+
+    <p class="eyebrow">LOCATION SERVICES</p>
+
+    <h2>Device Location Center</h2>
+
+    <p class="location-note">
+        Location access requires your permission.
+    </p>
+
+    <button id="getcurrentLocationBtn" class="location-btn">
+        Get My Current Location
+    </button>
+
+    <div id="currentLocationResult" class="location-result">
+        <p>Location not requested yet.</p>
+    </div>
+
+</section>
+<!-- LAST KNOWN LOCATION DEMO -->
+<section class="location-section">
+    <h2>Last Known Location</h2>
+
+    <p class="location-note">
+        This is a sample location for demonstration only.
+    </p>
+
+    <div class="location-result">
+        <h3>Lost Device: My Test Mobile</h3>
+        <p>Status: Last Location Available</p>
+        <p>Sample Coordinates: 22.7196, 75.8577</p>
+        <p>Last Updated: Demo Data</p>
+
+        <iframe
+            src="https://www.google.com/maps?q=22.7196,75.8577&output=embed"
+            width="100%"
+            height="300"
+            style="border:0;"
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+            <p class="eyebrow">QUICK ACTIONS</p>
+            <h2>Security Control Center</h2>
+
+            <div class="action-grid">
+
+                <div class="action-card">
+                    <div class="action-icon">📋</div>
+                    <h3>Device Registration</h3>
+                    <p>Manage your registered device information.</p>
+                    <button onclick="showMessage('Device registration module coming soon.')">
+                        Manage Device
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">🚨</div>
+                    <h3>Report Lost Device</h3>
+                    <p>Start the lost-device response process.</p>
+                    <button class="danger-btn" onclick="activateLostMode()">
+                        Activate Lost Mode
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">📍</div>
+                    <h3>Location Report</h3>
+                    <p>Request location from this browser with your permission.</p>
+                    <button id="getQuickLocationBtn" class="location-btn">
+                        Get My Location
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">📁</div>
+                    <h3>Recovery Records</h3>
+                    <p>View incident and recovery information.</p>
+                    <button onclick="showMessage('Recovery records module coming soon.')">
+                        View Records
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="location-section">
+            <p class="eyebrow">LOCATION INFORMATION</p>
+            <h2>Latest Location Report</h2>
+            <div class="location-box" id="locationResult">
+                <span>📍</span>
+                <p>No location report available yet.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>PHANTOM GUARD © 2026 | TEAM GLITCH</p>
+            <p>Prototype Version 1.0</p>
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
